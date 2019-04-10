@@ -1,0 +1,28 @@
+.contentM {
+   display: grid;
+   grid-template-columns: 2fr 18fr;
+    background-color: rgb(104, 3, 95);
+    color:red;
+}
+
+ .dia a {
+    color: red;
+    padding: 25px;
+    padding-top: 10px;
+    text-decoration: none; 
+}
+ 
+ .dia a.active {
+    color:gold;
+    
+    text-decoration: none; 
+}
+ 
+
+
+.contentM .messages .mess {
+    color: white;
+    padding: 7px; 
+}
+
+ 
