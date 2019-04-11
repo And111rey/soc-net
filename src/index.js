@@ -2,25 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { App } from "./app"; 
-import {  addToState }  from "./redux/state.js";
-import   { state }   from "./redux/state.js";
+// import {  addToState }  from "./redux/state.js";
+import  store from "./redux/state.js";
 import { BrowserRouter } from "react-router-dom";
-import { subscribe } from "./redux/state.js";
+// import { subscribe } from "./redux/state.js";
 
 
 
- let rerender = () => {
+ let rerender = (state) => {
     
         ReactDOM.render(
             <BrowserRouter>
-                < App state={state} addToState={addToState}  />
+                < App state={store.getState()} addToState={store.addToState.bind(store)}  />
             </BrowserRouter>, document.getElementById('root'));
 };
 
+rerender(store.getState());
+store.subscribe(rerender);
 
-subscribe(rerender);
-rerender();
-// export {rerender};
 
     
 

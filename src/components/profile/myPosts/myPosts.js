@@ -4,24 +4,22 @@ import React from "react";
 import "./myPosts.css";
 import { Post } from "./post/post.js";
 
+
+
 const MyPosts = (props) => {
-
-
-let postContent = props.state.profilePage.posts_data.map ((el) => {
-    return (
-        < Post name={el.mess_post} like={el.like}/>
+    let postContent = props.state.profilePage.posts_data.map ((el) => {
+        return (
+            < Post name={el.mess_post} like={el.like}/>
     );
 });
 
     let val = React.createRef();
 
     let sendToState = () =>{
-        
         let text = val.current.value;
-        // let text = document.getElementById("text").value;
-        // debugger;
         props.addToState(text);
-        alert(text);
+        // let action = addPostActionCreator(text);
+        // alert(text);
         
     };
    
