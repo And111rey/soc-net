@@ -43,17 +43,31 @@ let store ={
     rerender () {
         console.log ("State was changed");
     },
-    addToState (text)  {
-        let newArr = {
-            id: 5,
-            mess_post: text,
-            like: 5
-        };
-        this._state.profilePage.posts_data.push(newArr);
-        this.rerender(this._state);
-    },
+    // addToState (text)  {
+    //     let newArr = {
+    //         id: 5,
+    //         mess_post: text,
+    //         like: 5
+    //     };
+    //     this._state.profilePage.posts_data.push(newArr);
+    //     this.rerender(this._state);
+    // },
     subscribe (observer) {
         this.rerender = observer;
+    },
+    dispatch (action) {
+        
+        if(action.type == "ADD-POST") {
+            let newArr = {
+                id: 5,
+                mess_post: action.text,
+                like: 5
+            };
+            this._state.profilePage.posts_data.push(newArr);
+            this.rerender(this._state);
+        } else {
+            alert("Что-то не так )))))");
+        };
     }
 };
 

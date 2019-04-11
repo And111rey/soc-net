@@ -16,8 +16,10 @@ const MyPosts = (props) => {
     let val = React.createRef();
 
     let sendToState = () =>{
+        
         let text = val.current.value;
-        props.addToState(text);
+        let action = {type:"ADD-POST", text: text}
+        props.dispatch(action);
         // let action = addPostActionCreator(text);
         // alert(text);
         

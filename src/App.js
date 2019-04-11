@@ -18,7 +18,7 @@ const App = (props) => {
                 < NavBar /> 
                 
                     < Route path="/dialogs" render={ () => < Dialogs state_d={props.state.dialogsPage}  /> } />
-                    < Route path="/profile" render={ () => < Profile state = {props.state} addToState={props.addToState} /> }/>
+                    < Route path="/profile" render={ () => < Profile state = {props.state} dispatch={props.dispatch} /> }/>
                                 
 
             </div>
